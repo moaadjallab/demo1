@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-12 stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-title">Client/Fournisseur</h6>
+        <div class="table-responsive">
+          <ngx-datatable
+            class="bootstrap"
+            [rows]="rows"
+            [loadingIndicator]="loadingIndicator"
+            [columnMode]="ColumnMode.force"
+            [footerHeight]="50"
+            [limit]="10"
+            rowHeight="auto"
+          >
+            <ngx-datatable-column name="Client"></ngx-datatable-column>
+            <ngx-datatable-column name="Rée"></ngx-datatable-column>
+            <ngx-datatable-column name="Ville" prop="address.city"></ngx-datatable-column>
+            <ngx-datatable-column name="Gsm"></ngx-datatable-column>
+            <ngx-datatable-column name="Téléphone" ></ngx-datatable-column>
+            <ngx-datatable-column name="E-mail" ></ngx-datatable-column>
+          </ngx-datatable>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
