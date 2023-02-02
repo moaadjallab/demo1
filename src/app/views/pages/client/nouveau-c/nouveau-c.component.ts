@@ -82,6 +82,7 @@ export class NouveauCComponent implements OnInit {
       },
       error => {
         console.error(error);
+        this.router.navigate(['/login']);
       }
     );
   }

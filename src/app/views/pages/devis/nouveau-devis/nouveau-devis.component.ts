@@ -20,16 +20,11 @@ export class NouveauDevisComponent implements OnInit {
   Conditions:string;
   methode: string;
   delai:number;
+  var1:any;
 
   currentDate: NgbDateStruct;
   client: any [] = [];
   token = sessionStorage.getItem('token');
-
-
-
-
-
-
 
   constructor(
     private calendar: NgbCalendar,
@@ -74,11 +69,12 @@ export class NouveauDevisComponent implements OnInit {
       delaiLivraison:this.delai,
       duree:this.dureedevalidite,
       modeReglement:this.UnderpaymentSelected,
-      nomClient:this.selectedPersonId,
     }, requestOptions).subscribe(
       data => {
         if (data) {
-          console.log(data);
+          this.var1 = data.id;
+          console.log(data.id);
+          this.router.navigate(['devis/Liste-Devis/:'+this.var1]);
         }
       },
       error => {

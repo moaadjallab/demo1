@@ -14,6 +14,7 @@ import {ColorPickerModule} from "ngx-color-picker";
 import {DropzoneModule} from "ngx-dropzone-wrapper";
 import {NgbDatepickerModule} from "@ng-bootstrap/ng-bootstrap";
 import {NgxDatatableModule} from "@swimlane/ngx-datatable";
+import {DeviComponent} from "./devi/devi.component";
 
 
 
@@ -33,6 +34,10 @@ const routes: Routes = [
         component: NouveauDevisComponent
       },
       {
+        path: 'Liste-Devis/:id',
+        component: DeviComponent
+      },
+      {
         path: 'Liste-Devis',
         component: ListeDevisComponent
       }
@@ -41,7 +46,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [ListeDevisComponent,NouveauDevisComponent,DevisComponent],
+  declarations: [ListeDevisComponent,NouveauDevisComponent,DevisComponent,DeviComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
